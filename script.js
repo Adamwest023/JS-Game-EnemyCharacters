@@ -7,12 +7,10 @@ const numberOfEnemies = 100;
 const enemiesArray = [];
 let gameFrame = 0;
 
-//enemy image   n
-const enemyImage = new Image();
-enemyImage.src = 'assets/enemies/enemy1.png'
-
 class Enemy {
     constructor() {
+        this.image = new Image();
+        this.image.src = 'assets/enemies/enemy1.png';
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
         this.speed = Math.random() * 4 - 2;
