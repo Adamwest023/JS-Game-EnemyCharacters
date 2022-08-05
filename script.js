@@ -3,12 +3,14 @@ const canvas = document.getElementById('canvas1');
 const ctx = canvas.getContext('2d');
 CANVAS_WIDTH = canvas.width = 500;
 CANVAS_HEIGHT = canvas.height = 1000;
+//create an array of enemies for the class to run through
 const numberOfEnemies = 10;
 const enemiesArray = [];
 let gameFrame = 0;
 
 class Enemy {
     constructor() {
+        //pulls the image and sets it to the class
         this.image = new Image();
         this.image.src = 'assets/enemies/enemy1.png';
         // this.speed = Math.random() * 4 - 2;
@@ -19,7 +21,7 @@ class Enemy {
         this.x = Math.random() * (canvas.width - this.width);
         this.y = Math.random() * (canvas.height - this.height);
         this.frame = 0;
-        this.flapSpeed = Math.floor(Math.random() * 3 + 1);
+        this.flapSpeed = Math.floor(Math.random() * 5 + 2);
     };
     update() {
         this.x += Math.random() * 15 - 7.5;
@@ -52,3 +54,5 @@ function animate() {
 };
 
 animate(); 
+
+
